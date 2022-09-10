@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/28-days-later.ttf" type="DynamicFontData" id=1]
 
@@ -10,15 +10,19 @@ font_data = ExtResource( 1 )
 size = 200
 font_data = ExtResource( 1 )
 
-[sub_resource type="ViewportTexture" id=3]
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("SealCountSection/Viewport")
 
 [sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("HeadShotSection/Viewport")
 
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("ScoreSection/Viewport")
+
 [node name="GameResults" type="Spatial"]
 
 [node name="SealCountSection" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.583443, -3.51461, 0 )
 
 [node name="Viewport" type="Viewport" parent="SealCountSection"]
 size = Vector2( 1000, 1000 )
@@ -55,10 +59,12 @@ custom_fonts/font = SubResource( 1 )
 text = "Seals"
 align = 1
 
-[node name="Sprite3D" type="Sprite3D" parent="SealCountSection/Viewport"]
-texture = SubResource( 3 )
+[node name="Sprite3D" type="Sprite3D" parent="SealCountSection"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237533, 0, 0 )
+texture = SubResource( 5 )
 
 [node name="HeadShotSection" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96648, -3.55053, 0 )
 
 [node name="Viewport" type="Viewport" parent="HeadShotSection"]
 size = Vector2( 1000, 1000 )
@@ -95,45 +101,46 @@ custom_fonts/font = SubResource( 1 )
 text = "Headshots"
 align = 1
 
-[node name="Sprite3D" type="Sprite3D" parent="HeadShotSection/Viewport"]
+[node name="Sprite3D" type="Sprite3D" parent="HeadShotSection"]
 texture = SubResource( 4 )
 
-[node name="ScoreSection2" type="Spatial" parent="."]
+[node name="ScoreSection" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0088, -3.55614, 0 )
 
-[node name="Viewport" type="Viewport" parent="ScoreSection2"]
+[node name="Viewport" type="Viewport" parent="ScoreSection"]
 size = Vector2( 1000, 1000 )
 transparent_bg = true
 render_target_v_flip = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScoreSection2/Viewport"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreSection/Viewport"]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Label" type="Label" parent="ScoreSection2/Viewport/VBoxContainer"]
-margin_right = 243.0
+[node name="Label" type="Label" parent="ScoreSection/Viewport/VBoxContainer"]
+margin_right = 259.0
 margin_bottom = 49.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "You killed"
+text = "You scored"
 align = 1
 
-[node name="Value" type="Label" parent="ScoreSection2/Viewport/VBoxContainer"]
+[node name="Value" type="Label" parent="ScoreSection/Viewport/VBoxContainer"]
 margin_top = 53.0
-margin_right = 243.0
+margin_right = 259.0
 margin_bottom = 224.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "50"
 align = 1
 
-[node name="Label2" type="Label" parent="ScoreSection2/Viewport/VBoxContainer"]
+[node name="Label2" type="Label" parent="ScoreSection/Viewport/VBoxContainer"]
 margin_top = 228.0
-margin_right = 243.0
+margin_right = 259.0
 margin_bottom = 277.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Seals"
+text = "Points"
 align = 1
 
-[node name="Sprite3D" type="Sprite3D" parent="ScoreSection2/Viewport"]
+[node name="Sprite3D" type="Sprite3D" parent="ScoreSection"]
 texture = SubResource( 3 )
