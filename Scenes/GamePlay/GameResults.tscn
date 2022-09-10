@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Fonts/28-days-later.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/GamePlay/GameResults.gd" type="Script" id=2]
@@ -19,6 +19,13 @@ viewport_path = NodePath("HeadShotSection/Viewport")
 
 [sub_resource type="ViewportTexture" id=3]
 viewport_path = NodePath("ScoreSection/Viewport")
+
+[sub_resource type="DynamicFont" id=6]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="ViewportTexture" id=7]
+viewport_path = NodePath("GoToMenuSection/Viewport")
 
 [node name="GameResults" type="Spatial"]
 script = ExtResource( 2 )
@@ -146,3 +153,22 @@ align = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="ScoreSection"]
 texture = SubResource( 3 )
+
+[node name="GoToMenuSection" type="Spatial" parent="."]
+
+[node name="Viewport" type="Viewport" parent="GoToMenuSection"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="Label" type="Label" parent="GoToMenuSection/Viewport"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Press X to go back to Menu"
+align = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="GoToMenuSection"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29337, -6.95625, 0 )
+texture = SubResource( 7 )

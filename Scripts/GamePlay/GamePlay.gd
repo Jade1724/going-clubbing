@@ -36,6 +36,7 @@ func set_player(player):
 	player.set_name("ARVROrigin")
 	$ARVROrigin/LeftTouchController.connect("x_button_pressed", self, "_on_VRController_x_button_pressed")
 	timer_watch = $ARVROrigin/LeftTouchController/TimerWatch
+	timer_watch.set_left_time(GAME_PLAY_DURATION)
 	timer_watch.set_visible(true)
 	
 	# TODO connect from seal
@@ -57,7 +58,6 @@ func _on_Seal_killed(is_headshot):
 		score += Point.HEADSHOT
 	else:
 		score += Point.NORMAL
-		get_tree().root.get_node("Game/AudioStreamPlayer").play()
 
 
 func _on_GamePlayTimer_timeout():
