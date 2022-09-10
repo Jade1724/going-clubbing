@@ -12,3 +12,6 @@ data_*/
 
 # Builds
 build/
+
+# OS files
+.DS_Store
