@@ -3,16 +3,13 @@
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Camp.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/GamePlay/GamePlay.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/GamePlay/GameResults.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Seal.tscn" type="PackedScene" id=4]
 
 [node name="GamePlay" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02056, 0 )
-
-[node name="Camp" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.23347 )
 
 [node name="StartGameCountDownTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -23,6 +20,14 @@ autostart = true
 
 [node name="GameResults" parent="." instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.4344, -22.7247 )
+
+[node name="Camp" parent="." instance=ExtResource( 2 )]
+
+[node name="Seal" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86372, 0.35, 1.56057 )
+
+[node name="Seal2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.35, 1.66366 )
 
 [connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
 [connection signal="timeout" from="GamePlayTimer" to="." method="_on_GamePlayTimer_timeout"]
