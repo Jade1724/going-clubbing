@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/28-days-later.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/GamePlay/TimerWatch.gd" type="Script" id=2]
 
 [sub_resource type="CylinderMesh" id=1]
 top_radius = 0.03
@@ -17,6 +18,7 @@ viewport_path = NodePath("Viewport")
 [node name="TimerWatch" type="MeshInstance"]
 mesh = SubResource( 1 )
 material/0 = null
+script = ExtResource( 2 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 250, 250 )

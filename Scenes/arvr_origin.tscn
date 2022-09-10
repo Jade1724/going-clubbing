@@ -13,7 +13,7 @@
 [ext_resource path="res://addons/godot_ovrmobile/example_scenes/touch_controller.dae" type="PackedScene" id=11]
 [ext_resource path="res://addons/godot_ovrmobile/example_scenes/left_hand_model.glb" type="PackedScene" id=12]
 [ext_resource path="res://addons/godot_ovrmobile/example_scenes/hand_pointer.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/TimerWatch.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/GamePlay/TimerWatch.tscn" type="PackedScene" id=14]
 
 [node name="ARVROrigin" type="ARVROrigin"]
 script = ExtResource( 9 )
@@ -38,9 +38,8 @@ transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )
 [node name="Function_Pickup" parent="LeftTouchController" instance=ExtResource( 6 )]
 
 [node name="TimerWatch" parent="LeftTouchController" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 0.871385, -0.4906, 0, 0.4906, 0.871385, -0.00709826, 0.0222949, 0.0615622 )
+transform = Transform( 1, 0, 0, 0, 0.934609, -0.355678, 0, 0.355678, 0.934609, -0.0385148, 0.0247968, 0.0802779 )
 visible = false
-skeleton = NodePath("../../RightTouchController")
 
 [node name="RightTouchController" type="ARVRController" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.72656, -0.4 )
