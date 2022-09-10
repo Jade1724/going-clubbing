@@ -7,7 +7,7 @@ onready var ovr_performance = preload("res://addons/godot_ovrmobile/OvrPerforman
 # == End of ARVR setup =====
 
 var game_play_scene = preload("res://Levels/GamePlay.tscn")
-
+var menu_scene = preload("res://Levels/Menu.tscn")
 
 func _ready():
 	setup_arvr_mode()
@@ -36,6 +36,16 @@ func go_to_gameplay(player):
 	add_child(game_play_level_instance, true)
 	game_play_level_instance.set_name("GamePlay")
 	game_play_level_instance.set_player(player)
+	game_play_level_instance.connect("exit_to_menu", self, "_on_GamePlay_exit_to_menu")
+	
+	
+func go_to_menu(player):
+	var menu_level_instance = menu_scene.instance()
+	
+	add_child(menu_level_instance, true)
+	menu_level_instance.set_name("Menu")
+	menu_level_instance.set_player(player)
+	menu_level_instance.connect("play_game", self, "_on_Menu_play_game")
 	
 func _on_Menu_play_game():
 	
@@ -48,3 +58,14 @@ func _on_Menu_play_game():
 	
 	# Go to the GamePlay level
 	go_to_gameplay(player)
+
+func _on_GamePlay_exit_to_menu():
+	
+	# Detatch the player from Menu level
+	var player = $GamePlay/ARVROrigin
+	if player and player.get_parent():
+		player.get_parent().remove_child(player)
+	# Delete GamePlay scene
+	$GamePlay.queue_free()
+	
+	go_to_menu(player)

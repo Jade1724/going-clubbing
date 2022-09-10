@@ -1,20 +1,15 @@
 extends Spatial
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal exit_to_menu
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	pass
 
 func set_player(player):
 	add_child(player, true)
 	player.set_name("ARVROrigin")
+	$ARVROrigin/LeftTouchController.connect("x_button_pressed", self, "_on_VRController_x_button_pressed")
+	
+func _on_VRController_x_button_pressed():
+	emit_signal("exit_to_menu")	
