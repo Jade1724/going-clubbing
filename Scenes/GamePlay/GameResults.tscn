@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/28-days-later.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 56
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 200
+font_data = ExtResource( 1 )
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("SealCountSection/Viewport")
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("HeadShotSection/Viewport")
+
+[node name="GameResults" type="Spatial"]
+
+[node name="SealCountSection" type="Spatial" parent="."]
+
+[node name="Viewport" type="Viewport" parent="SealCountSection"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SealCountSection/Viewport"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="SealCountSection/Viewport/VBoxContainer"]
+margin_right = 243.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "You killed"
+align = 1
+
+[node name="Value" type="Label" parent="SealCountSection/Viewport/VBoxContainer"]
+margin_top = 53.0
+margin_right = 243.0
+margin_bottom = 224.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "50"
+align = 1
+
+[node name="Label2" type="Label" parent="SealCountSection/Viewport/VBoxContainer"]
+margin_top = 228.0
+margin_right = 243.0
+margin_bottom = 277.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Seals"
+align = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="SealCountSection/Viewport"]
+texture = SubResource( 3 )
+
+[node name="HeadShotSection" type="Spatial" parent="."]
+
+[node name="Viewport" type="Viewport" parent="HeadShotSection"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeadShotSection/Viewport"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="HeadShotSection/Viewport/VBoxContainer"]
+margin_right = 251.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "You got"
+align = 1
+
+[node name="Value" type="Label" parent="HeadShotSection/Viewport/VBoxContainer"]
+margin_top = 53.0
+margin_right = 251.0
+margin_bottom = 224.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "50"
+align = 1
+
+[node name="Label2" type="Label" parent="HeadShotSection/Viewport/VBoxContainer"]
+margin_top = 228.0
+margin_right = 251.0
+margin_bottom = 277.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Headshots"
+align = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="HeadShotSection/Viewport"]
+texture = SubResource( 4 )
+
+[node name="ScoreSection2" type="Spatial" parent="."]
+
+[node name="Viewport" type="Viewport" parent="ScoreSection2"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreSection2/Viewport"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="ScoreSection2/Viewport/VBoxContainer"]
+margin_right = 243.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "You killed"
+align = 1
+
+[node name="Value" type="Label" parent="ScoreSection2/Viewport/VBoxContainer"]
+margin_top = 53.0
+margin_right = 243.0
+margin_bottom = 224.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "50"
+align = 1
+
+[node name="Label2" type="Label" parent="ScoreSection2/Viewport/VBoxContainer"]
+margin_top = 228.0
+margin_right = 243.0
+margin_bottom = 277.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Seals"
+align = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="ScoreSection2/Viewport"]
+texture = SubResource( 3 )

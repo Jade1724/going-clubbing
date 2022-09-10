@@ -43,3 +43,4 @@ autostart = true
 [node name="GamePlayTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
+[connection signal="timeout" from="GamePlayTimer" to="." method="_on_GamePlayTimer_timeout"]

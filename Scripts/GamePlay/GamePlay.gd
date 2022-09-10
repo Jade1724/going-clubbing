@@ -8,6 +8,7 @@ const GAME_PLAY_DURATION = 30
 var current_left_time = GAME_PLAY_DURATION
 var game_play_timer_left_time
 var timer_watch
+var seal_kill_count = 0
 
 signal exit_to_menu
 
@@ -29,9 +30,20 @@ func set_player(player):
 	timer_watch = $ARVROrigin/LeftTouchController/TimerWatch
 	timer_watch.set_visible(true)
 	
+	# TODO connect from seal
+	$ARVROrigin/LeftTouchController.connect("killed", self, "_on_Seal_killed")
+	
 func _on_VRController_x_button_pressed():
 	emit_signal("exit_to_menu")
 	
 
 func _on_StartGameCountDownTimer_timeout():
 	game_play_timer.start()
+
+func _on_Seal_killed():
+	seal_kill_count += 1
+
+func _on_GamePlayTimer_timeout():
+	get_tree().root.get_node("Game/AudioStreamPlayer").play()
+	
+	
