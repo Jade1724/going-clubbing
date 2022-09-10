@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_pathOpen.obj-adad613c461c7e03c3b6680c9dc9b2ac.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_pathOpen.obj-adad613c461c7e03c3b6680c9dc9b2ac.mesh" ]
+
+source_file="res://Assets/OBJ format/ground_pathOpen.obj"
+dest_files=[ "res://.import/ground_pathOpen.obj-adad613c461c7e03c3b6680c9dc9b2ac.mesh", "res://.import/ground_pathOpen.obj-adad613c461c7e03c3b6680c9dc9b2ac.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

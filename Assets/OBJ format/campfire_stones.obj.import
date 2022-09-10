@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/campfire_stones.obj-bb6b31f0708b72a5beb50999a01697cc.mesh"
+
+[deps]
+
+files=[ "res://.import/campfire_stones.obj-bb6b31f0708b72a5beb50999a01697cc.mesh" ]
+
+source_file="res://Assets/OBJ format/campfire_stones.obj"
+dest_files=[ "res://.import/campfire_stones.obj-bb6b31f0708b72a5beb50999a01697cc.mesh", "res://.import/campfire_stones.obj-bb6b31f0708b72a5beb50999a01697cc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

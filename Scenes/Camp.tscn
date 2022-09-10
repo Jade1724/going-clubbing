@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/OBJ format/tent_detailedOpen.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/OBJ format/log_stack.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/OBJ format/campfire_stones.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/OBJ format/tent_smallClosed.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/OBJ format/campfire_logs.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/OBJ format/pot_small.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/OBJ format/canoe_paddle.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/OBJ format/canoe.obj" type="ArrayMesh" id=8]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Camp" type="Spatial"]
+
+[node name="tent_detailedOpen" type="MeshInstance" parent="."]
+transform = Transform( 0.813842, 0, 0.581087, 0, 1, 0, -0.581087, 0, 0.813842, -0.683992, 0, -0.84588 )
+mesh = ExtResource( 1 )
+
+[node name="tent_smallClosed" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227538, 0, -1.1032 )
+mesh = ExtResource( 4 )
+skeleton = NodePath("../tent_detailedOpen")
+
+[node name="log_stack" type="MeshInstance" parent="tent_smallClosed"]
+transform = Transform( -0.2541, 0, -0.688991, 0, 0.5, 0, 0.43062, 0, -0.40656, 0.661969, 0, 0.342571 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../pot_small")
+
+[node name="pot_small" type="MeshInstance" parent="tent_smallClosed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437648, 0, -0.102265 )
+mesh = ExtResource( 6 )
+
+[node name="campfire_logs" type="MeshInstance" parent="."]
+mesh = ExtResource( 5 )
+
+[node name="campfire_stones" type="MeshInstance" parent="."]
+mesh = ExtResource( 3 )
+
+[node name="canoe" type="MeshInstance" parent="."]
+transform = Transform( 0.99422, -0.107357, 0, 0.107357, 0.99422, 0, 0, 0, 1, 0.92793, 0, 0 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../campfire_stones")
+
+[node name="canoe_paddle" type="MeshInstance" parent="canoe"]
+transform = Transform( 0.887092, 0.0121921, -0.461433, 0.012192, 0.998684, 0.0498262, 0.461434, -0.0498262, 0.885775, 0.0327065, 0.239535, 0 )
+mesh = ExtResource( 7 )
+
+[node name="canoe_paddle2" type="MeshInstance" parent="canoe"]
+transform = Transform( 0.0808598, -0.575563, -0.813751, 0.185123, 0.810892, -0.555145, 0.979384, -0.105755, 0.172118, -0.0748764, 0.251152, 0 )
+mesh = ExtResource( 7 )
+
+[node name="1m" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="1m"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84078, 0.5, 0 )
+mesh = SubResource( 1 )
