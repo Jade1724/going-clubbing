@@ -34,3 +34,12 @@ material/0 = null
 
 [node name="Camp" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.23347 )
+
+[node name="StartGameCountDownTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="GamePlayTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
