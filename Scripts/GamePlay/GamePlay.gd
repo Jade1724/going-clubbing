@@ -15,8 +15,8 @@ signal exit_to_menu
 
 func _ready():
 	rng.randomzie()
-	var Seal = get_tree().current_scene.get_note("Seal")
-	var seal_anim = Seal.get_node("AnimatedSprite")
+	var Seal = get_tree().current_scene.get_node("Seal")
+	var seal_anim = Seal.get_node("AnimationPlayer") #AnimationPlayer
 	seal_anim.play("jump")
 	game_play_timer.set_one_shot(true)
 	game_play_timer.set_wait_time(GAME_PLAY_DURATION)

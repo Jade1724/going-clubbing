@@ -9,10 +9,30 @@ onready var ovr_performance = preload("res://addons/godot_ovrmobile/OvrPerforman
 var game_play_scene = preload("res://Levels/GamePlay.tscn")
 var menu_scene = preload("res://Levels/Menu.tscn")
 
+#GREYS
+var rng = RandomNumberGenerator.new()
+#END GREYS
+
 func _ready():
 	setup_arvr_mode()
 	$Menu.connect("play_game", self, "_on_Menu_play_game")
+	#GREYS
+	rng.randomzie()
+	var Seal = get_tree().current_scene.get_node("Seal")
+	var seal_anim = Seal.get_node("AnimationPlayer") #AnimationPlayer
+	seal_anim.play("jump")
+	#END GREYS
 
+signal exit_to_menu
+
+
+#randomly plays either jump or look about animation on a seal if it is not currently in an animation
+func random_seal_animation(seal):
+	var num = rng.randi_range(0,1)
+	if num: # and seal not in animation !seal.is_playing()
+		pass #play jump
+	#elif: #!seal.is_playing()
+	#	pass #seal idle
 	
 func setup_arvr_mode():
 	var interface = ARVRServer.find_interface("OVRMobile")
