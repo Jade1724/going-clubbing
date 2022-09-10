@@ -21,7 +21,7 @@ autostart = true
 [node name="GamePlayTimer" type="Timer" parent="."]
 
 [node name="GameResults" parent="." instance=ExtResource( 5 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.4344, -22.7247 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -1.26695, 10.4344, -22.7247 )
 visible = false
 
 [node name="Camp" parent="." instance=ExtResource( 2 )]

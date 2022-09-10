@@ -40,7 +40,7 @@ func set_player(player):
 	
 	# TODO connect from seal
 	$ARVROrigin/LeftTouchController.connect("killed", self, "_on_Seal_killed")
-	
+	$ARVROrigin/RightTouchController.connect("killed", self, "_on_Seal_killed")
 func _on_VRController_x_button_pressed():
 	emit_signal("exit_to_menu")
 	
@@ -51,11 +51,14 @@ func _on_StartGameCountDownTimer_timeout():
 func _on_Seal_killed(is_headshot):
 	
 	seal_kill_count += 1
+	
 	if is_headshot:
 		headshot_count += 1
 		score += Point.HEADSHOT
 	else:
 		score += Point.NORMAL
+		get_tree().root.get_node("Game/AudioStreamPlayer").play()
+
 
 func _on_GamePlayTimer_timeout():
 	var game_results_data = GamePlayData.new()

@@ -4,13 +4,12 @@ signal a_button_pressed
 signal x_button_pressed
 
 # Temporary signal for debugging TODO Remove later
-signal killed
+signal killed(is_headhshot)
 
 # this is a function connected to the button release signal from the controller
 func _on_LeftTouchController_button_pressed(button):
 
 	if (button == CONTROLLER_BUTTON.YB):
-		get_tree().root.get_node("Game/AudioStreamPlayer").play()
 		# TODO move this signal to Seal later
 		emit_signal("killed", true) # headshot
 
@@ -19,7 +18,6 @@ func _on_LeftTouchController_button_pressed(button):
 
 func _on_RightTouchController_button_pressed(button):
 	if (button == CONTROLLER_BUTTON.YB):
-		get_tree().root.get_node("Game/AudioStreamPlayer").play()
 		# TODO move this signal to Seal later
 		emit_signal("killed", false) # normal kill
 

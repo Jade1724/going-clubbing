@@ -11,12 +11,10 @@ func show_game_results(data):
 		set_headshot_count(data.get_headshot_count())
 		set_score_label(data.get_score())
 		set_visible(true)
-		get_tree().root.get_node("Game/AudioStreamPlayer").play()
-	
+
 
 func set_seal_count(count):
 	seal_count_label.set_text(str(count))
-
 	
 func set_headshot_count(count):
 	headhshot_count_label.set_text(str(count))
