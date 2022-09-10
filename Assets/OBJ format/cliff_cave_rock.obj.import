@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_cave_rock.obj-da43f86d08629379c246ab3c5ccd9c41.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_cave_rock.obj-da43f86d08629379c246ab3c5ccd9c41.mesh" ]
+
+source_file="res://Assets/OBJ format/cliff_cave_rock.obj"
+dest_files=[ "res://.import/cliff_cave_rock.obj-da43f86d08629379c246ab3c5ccd9c41.mesh", "res://.import/cliff_cave_rock.obj-da43f86d08629379c246ab3c5ccd9c41.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
