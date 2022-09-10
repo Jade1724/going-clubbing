@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/OBJ format/tent_detailedOpen.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/OBJ format/log_stack.obj" type="ArrayMesh" id=2]
@@ -8,8 +8,6 @@
 [ext_resource path="res://Assets/OBJ format/pot_small.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://Assets/OBJ format/canoe_paddle.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://Assets/OBJ format/canoe.obj" type="ArrayMesh" id=8]
-
-[sub_resource type="CubeMesh" id=1]
 
 [node name="Camp" type="Spatial"]
 
@@ -38,7 +36,7 @@ mesh = ExtResource( 5 )
 mesh = ExtResource( 3 )
 
 [node name="canoe" type="MeshInstance" parent="."]
-transform = Transform( 0.99422, -0.107357, 0, 0.107357, 0.99422, 0, 0, 0, 1, 0.92793, 0, 0 )
+transform = Transform( 0.99422, -0.107357, 0, 0.107357, 0.99422, 0, 0, 0, 1, 0.92793, -0.026036, 0 )
 mesh = ExtResource( 8 )
 skeleton = NodePath("../campfire_stones")
 
@@ -49,9 +47,3 @@ mesh = ExtResource( 7 )
 [node name="canoe_paddle2" type="MeshInstance" parent="canoe"]
 transform = Transform( 0.0808598, -0.575563, -0.813751, 0.185123, 0.810892, -0.555145, 0.979384, -0.105755, 0.172118, -0.0748764, 0.251152, 0 )
 mesh = ExtResource( 7 )
-
-[node name="1m" type="Spatial" parent="."]
-
-[node name="MeshInstance" type="MeshInstance" parent="1m"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84078, 0.5, 0 )
-mesh = SubResource( 1 )
