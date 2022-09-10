@@ -34,7 +34,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85766, 0.298787, 1.56462 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.35, 1.66366 )
 
 [node name="Club" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08636, 3.22446 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.309259, 1.08636, 2.72208 )
 
 [connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
 [connection signal="timeout" from="GamePlayTimer" to="." method="_on_GamePlayTimer_timeout"]

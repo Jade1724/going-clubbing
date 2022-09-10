@@ -1,6 +1,6 @@
 extends Spatial
 
-
+signal killed(is_headshot)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -21,4 +21,7 @@ func _on_Area_area_entered(area):
 	#play_tone()
 	if area.get_parent().get_groups().has("weapon"):
 		play_tone()
-	pass # Replace with function body.
+		emit_signal("killed", false)
+		queue_free()
+		
+
