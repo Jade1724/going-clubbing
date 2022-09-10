@@ -17,12 +17,26 @@ var seal_kill_count = 0
 var headshot_count = 0
 var score = 0
 var GamePlayData = load("res://Scripts/Classes/GamePlayData.gd")
+var rng = RandomNumberGenerator.new()
 
 signal exit_to_menu
 
 func _ready():
+	rng.randomzie()
+	var Seal = get_tree().current_scene.get_note("Seal")
+	var seal_anim = Seal.get_node("AnimatedSprite")
+	seal_anim.play("jump")
 	game_play_timer.set_one_shot(true)
 	game_play_timer.set_wait_time(GAME_PLAY_DURATION)
+	
+
+#randomly plays either jump or look about animation on a seal if it is not currently in an animation
+func random_seal_animation(seal):
+	var num = rng.randi_range(0,1)
+	if num: # and seal not in animation !seal.is_playing()
+		pass #play jump
+	#elif: #!seal.is_playing()
+	#	pass #seal idle
 	
 
 func _process(delta):

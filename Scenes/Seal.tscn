@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Seals/toon_characters_3d__style_lowpolyflat__seal.glb" type="PackedScene" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.2
+height = 0.2
+
+[node name="Seal" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0 )
+
+[node name="BabySeal" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="BabySeal"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BabySeal/StaticBody"]
+transform = Transform( 200, 0, 0, 0, 200, 0, 0, 0, 200, 16.124, 0, 9.01639 )
+shape = SubResource( 1 )
