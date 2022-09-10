@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Camp.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/GamePlay/GamePlay.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Seal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GamePlay/GameResults.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GamePlay/Club.tscn" type="PackedScene" id=6]
 
 [node name="GamePlay" type="Spatial"]
 script = ExtResource( 3 )
@@ -31,6 +32,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85766, 0.298787, 1.56462 )
 
 [node name="Seal2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.35, 1.66366 )
+
+[node name="Club" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08636, 3.22446 )
 
 [connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
 [connection signal="timeout" from="GamePlayTimer" to="." method="_on_GamePlayTimer_timeout"]

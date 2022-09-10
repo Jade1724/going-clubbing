@@ -1,19 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Seals/toon_characters_3d__style_lowpolyflat__seal.glb" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/GamePlay/Seal.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.2
-height = 0.2
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.25, 0.25, 0.25 )
 
 [node name="Seal" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0 )
+script = ExtResource( 2 )
 
 [node name="BabySeal" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
 
-[node name="StaticBody" type="StaticBody" parent="BabySeal"]
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0257157, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="BabySeal/StaticBody"]
-transform = Transform( 200, 0, 0, 0, 200, 0, 0, 0, 200, 16.124, 0, 9.01639 )
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
