@@ -10,10 +10,10 @@ func show_game_results(data):
 		set_seal_count(data.get_seal_count())
 		set_headshot_count(data.get_headshot_count())
 		set_score_label(data.get_score())
+		set_visible(true)
 		get_tree().root.get_node("Game/AudioStreamPlayer").play()
 	
-	set_visible(true)
-	
+
 func set_seal_count(count):
 	seal_count_label.set_text(str(count))
 

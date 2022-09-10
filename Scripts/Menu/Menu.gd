@@ -16,4 +16,4 @@ func set_player(player):
 	$ARVROrigin/LeftTouchController/TimerWatch.set_visible(false)
 
 func _on_VRController_a_button_pressed():
-	emit_signal("play_game")	
+	emit_signal("play_game")
