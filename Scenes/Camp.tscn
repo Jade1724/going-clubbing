@@ -53,5 +53,5 @@ mesh = ExtResource( 7 )
 [node name="1m" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="1m"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.77994, 0.118978, 0.160861 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84078, 0.5, 0 )
 mesh = SubResource( 1 )
