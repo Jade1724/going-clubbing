@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Fonts/28-days-later.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/GamePlay/GameResults.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
@@ -20,6 +21,7 @@ viewport_path = NodePath("HeadShotSection/Viewport")
 viewport_path = NodePath("ScoreSection/Viewport")
 
 [node name="GameResults" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="SealCountSection" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.583443, -3.51461, 0 )

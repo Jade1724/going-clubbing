@@ -23,6 +23,7 @@ autostart = true
 
 [node name="GameResults" parent="." instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.4344, -22.7247 )
+visible = false
 
 [connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
 [connection signal="timeout" from="GamePlayTimer" to="." method="_on_GamePlayTimer_timeout"]

@@ -10,17 +10,19 @@ signal killed
 func _on_LeftTouchController_button_pressed(button):
 
 	if (button == CONTROLLER_BUTTON.YB):
-		
+		get_tree().root.get_node("Game/AudioStreamPlayer").play()
 		# TODO move this signal to Seal later
-		emit_signal("killed")
+		emit_signal("killed", true) # headshot
 
 	if (button == CONTROLLER_BUTTON.XA):
 		emit_signal("x_button_pressed")
-
+		get_tree().root.get_node("Game/AudioStreamPlayer").play()
 
 func _on_RightTouchController_button_pressed(button):
 	if (button == CONTROLLER_BUTTON.YB):
-		pass
+		
+		# TODO move this signal to Seal later
+		emit_signal("killed", false) # normal kill
 
 	if (button == CONTROLLER_BUTTON.XA):
 		emit_signal("a_button_pressed")
