@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 10, 5, 0.5 )
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Viewport")
 
 [node name="GameInstructions" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.140117 )
@@ -9,6 +12,9 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 500, 500 )
+transparent_bg = true
+render_target_v_flip = true
 
 [node name="Label" type="Label" parent="Viewport"]
 margin_right = 40.0
@@ -17,3 +23,5 @@ text = "Hit baby seals with your club as many as you can in 30 seconds.
 Press A button to start the game"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.935515, 0.31014 )
+texture = SubResource( 3 )
