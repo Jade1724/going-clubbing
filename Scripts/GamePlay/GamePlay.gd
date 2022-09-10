@@ -21,7 +21,6 @@ var GamePlayData = load("res://Scripts/Classes/GamePlayData.gd")
 signal exit_to_menu
 
 func _ready():
-	# Setup the game play timer
 	game_play_timer.set_one_shot(true)
 	game_play_timer.set_wait_time(GAME_PLAY_DURATION)
 	
