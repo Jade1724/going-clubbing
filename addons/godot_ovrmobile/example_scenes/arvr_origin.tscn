@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/godot_ovrmobile/example_scenes/touch_controller.dae" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot_ovrmobile/example_scenes/left_hand_model.glb" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Direct_movement.tscn" type="PackedScene" id=10]
 [ext_resource path="res://addons/godot-xr-tools/assets/PlayerBody.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://addons/godot-xr-tools/functions/Function_Turn_movement.tscn" type="PackedScene" id=13]
 
 [node name="ARVROrigin" type="ARVROrigin"]
 script = ExtResource( 4 )
@@ -44,9 +45,9 @@ transform = Transform( 1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0
 
 [node name="Function_Teleport" parent="RightTouchController" instance=ExtResource( 9 )]
 
-[node name="Function_Direct_movement" parent="RightTouchController" instance=ExtResource( 10 )]
-
 [node name="Function_Pickup" parent="RightTouchController" instance=ExtResource( 12 )]
+
+[node name="Function_Turn_movement" parent="RightTouchController" instance=ExtResource( 13 )]
 
 [node name="LeftHand" type="ARVRController" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.2, 1.727, -0.4 )
