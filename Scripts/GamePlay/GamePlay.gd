@@ -32,6 +32,7 @@ func _process(delta):
 	if current_left_time != game_play_timer_left_time:
 		current_left_time = game_play_timer_left_time
 		timer_watch.set_left_time(current_left_time)
+	#ToDO
 
 func set_player(player):
 	add_child(player, true)
@@ -43,11 +44,18 @@ func set_player(player):
 	
 
 func _on_VRController_x_button_pressed():
+	stop_BGM()
 	emit_signal("exit_to_menu")
 	
+func play_BGM():
+	$BGM.play()
+
+func stop_BGM():
+	$BGM.stop()
 
 func _on_StartGameCountDownTimer_timeout():
 	game_play_timer.start()
+	play_BGM()
 
 func _on_Seal_killed(is_headshot):
 	
@@ -61,6 +69,7 @@ func _on_Seal_killed(is_headshot):
 
 
 func _on_GamePlayTimer_timeout():
+	stop_BGM()
 	var game_results_data = GamePlayData.new()
 	
 	game_results_data.set_seal_count(seal_kill_count)
