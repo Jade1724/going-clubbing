@@ -29,8 +29,9 @@ func _on_Area_area_entered(area):
 		squashed = true
 		emit_signal("killed", false)
 		kill_seal()
-		
-		
-		
-		
 
+func _on_HeadArea_area_entered(area):
+	if !squashed and area.get_parent().get_groups().has("weapon"):
+		squashed = true
+		emit_signal("killed", true)
+		kill_seal()
