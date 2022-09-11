@@ -11,12 +11,15 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	
-	var dead_screem_id = rng.randi_range(0, 19)
+	var dead_screem_id = rng.randi_range(0, 10)
+	var death_sound_id = rng.randi_range(12, 19)
 	$DeathScreamPlayer.set_stream(load("res://Assets/Audio/deaths/death" + str(dead_screem_id) + ".wav"))
+	$DeathSoundPlayer.set_stream(load("res://Assets/Audio/deaths/death" + str(death_sound_id) + ".wav"))
 
 func kill_seal():
 	set_scale(Vector3(1.5, 0.2, 1.5))
 	$DeathScreamPlayer.play()
+	$DeathSoundPlayer.play()
 
 func play_tone():
 	get_tree().root.get_node("Game/AudioStreamPlayer").play()
