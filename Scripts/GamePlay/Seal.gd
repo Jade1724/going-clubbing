@@ -10,6 +10,8 @@ signal killed(is_headshot)
 func _ready():
 	pass # Replace with function body.
 
+func kill_seal():
+	set_scale(Vector3(1.5, 0.2, 1.5))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -22,6 +24,8 @@ func _on_Area_area_entered(area):
 	if area.get_parent().get_groups().has("weapon"):
 		play_tone()
 		emit_signal("killed", false)
-		queue_free()
+		kill_seal()
+		
+		
 		
 

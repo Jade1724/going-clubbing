@@ -28,10 +28,10 @@ visible = false
 [node name="Camp" parent="." instance=ExtResource( 2 )]
 
 [node name="Seal" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85766, 0.298787, 1.56462 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85766, 0.0213346, 1.56462 )
 
 [node name="Seal2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.35, 1.66366 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.0101646, 1.66366 )
 
 [node name="Club" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.309259, 1.08636, 2.72208 )
