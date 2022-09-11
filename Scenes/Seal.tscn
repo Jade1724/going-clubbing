@@ -18,4 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0257157, 0.313569, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 1 )
 
+[node name="DeathScreamPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.132866, 0.132358 )
+
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]

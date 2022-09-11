@@ -9,11 +9,13 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	rng.randomize()
+	var dead_screem_id = rng.randi_range(1, 8)
+	$DeathScreamPlayer.set_stream(load("res://Assets/Audio/deaths/death" + str(dead_screem_id) + ".mp3"))
 
 func kill_seal():
 	set_scale(Vector3(1.5, 0.2, 1.5))
-
+	$DeathScreamPlayer.play()
 
 func play_tone():
 	get_tree().root.get_node("Game/AudioStreamPlayer").play()
