@@ -32,7 +32,9 @@ func _process(delta):
 	if current_left_time != game_play_timer_left_time:
 		current_left_time = game_play_timer_left_time
 		timer_watch.set_left_time(current_left_time)
-	#ToDO
+		
+		if current_left_time == 5:
+			$AnnounceCloseToTimesUp.play()
 
 func set_player(player):
 	add_child(player, true)
@@ -54,12 +56,20 @@ func stop_BGM():
 	$BGM.stop()
 
 func _on_StartGameCountDownTimer_timeout():
+	$AnnounceGameStart.play()
 	game_play_timer.start()
 	play_BGM()
 
 func _on_Seal_killed(is_headshot):
 	
 	seal_kill_count += 1
+	
+	if seal_kill_count == 10:
+		$Announce10Kills.play()
+	elif seal_kill_count == 20:
+		$Announce20Kills.play()
+	elif seal_kill_count == 30:
+		$Announce30Kills.play()
 	
 	if is_headshot:
 		headshot_count += 1
@@ -69,6 +79,7 @@ func _on_Seal_killed(is_headshot):
 
 
 func _on_GamePlayTimer_timeout():
+	$AnnounceTimesUp.play()
 	stop_BGM()
 	var game_results_data = GamePlayData.new()
 	
@@ -79,3 +90,4 @@ func _on_GamePlayTimer_timeout():
 	game_results.show_game_results(game_results_data)
 	
 	
+# 10 kills, 20 kills, 30 kills, game start, game times up, 5 seconds before end

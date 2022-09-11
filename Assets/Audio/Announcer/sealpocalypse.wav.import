@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sealpocalypse.wav-8688202f4b06de7f0340b070ffd15274.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Announcer/sealpocalypse.wav"
+dest_files=[ "res://.import/sealpocalypse.wav-8688202f4b06de7f0340b070ffd15274.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

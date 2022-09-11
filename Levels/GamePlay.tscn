@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Camp.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://Scenes/GamePlay/GameResults.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GamePlay/Club.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Audio/MountainKingCropped.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Announcer/clubageddon.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Announcer/start.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Announcer/gameOver.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Announcer/timeRunningOut.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/Announcer/sealpocalypse.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/Announcer/hell.wav" type="AudioStream" id=13]
 
 [node name="GamePlay" type="Spatial"]
 script = ExtResource( 3 )
@@ -513,7 +519,23 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85766, 0.0213346, 1.56462 )
 [node name="Seal2" parent="SealHolder" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.0101646, 1.66366 )
 
-[node name="Announcer" type="AudioStreamPlayer" parent="."]
+[node name="Announce10Kills" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Announce20Kills" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Announce30Kills" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="AnnounceGameStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="AnnounceTimesUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="AnnounceCloseToTimesUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
