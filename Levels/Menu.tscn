@@ -12,4 +12,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01013, 0 )
 material/0 = null
 
 [node name="GameInstructions" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02781, -3.88727 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 4.22531, 3.02781, -20.4585 )
