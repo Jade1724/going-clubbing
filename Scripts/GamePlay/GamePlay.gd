@@ -4,7 +4,7 @@ onready var start_game_count_down_timer = $StartGameCountDownTimer
 onready var game_play_timer = $GamePlayTimer
 onready var game_results = $GameResults
 
-const GAME_PLAY_DURATION = 15
+const GAME_PLAY_DURATION = 30
 const Point = {
 	NORMAL = 10,
 	HEADSHOT = 20
@@ -24,6 +24,8 @@ func _ready():
 	game_play_timer.set_one_shot(true)
 	game_play_timer.set_wait_time(GAME_PLAY_DURATION)
 	
+	for seal in $SealHolder.get_children():
+		seal.connect("killed", self, "_on_Seal_killed")
 
 func _process(delta):
 	game_play_timer_left_time = ceil(game_play_timer.get_time_left())
@@ -39,9 +41,7 @@ func set_player(player):
 	timer_watch.set_left_time(GAME_PLAY_DURATION)
 	timer_watch.set_visible(true)
 	
-	# TODO connect from seal
-	$Seal.connect("killed", self, "_on_Seal_killed")
-	$Seal2.connect("killed", self, "_on_Seal_killed")
+
 func _on_VRController_x_button_pressed():
 	emit_signal("exit_to_menu")
 	

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death16.wav-ee818987c58b0b11ac350cff98e1a620.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/deaths/death16.wav"
+dest_files=[ "res://.import/death16.wav-ee818987c58b0b11ac350cff98e1a620.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
