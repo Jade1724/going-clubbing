@@ -1,0 +1,552 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Camp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/GamePlay/GamePlay.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Seal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GamePlay/GameResults.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GamePlay/Axe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Audio/MountainKingCropped.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Announcer/clubageddon.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Announcer/start.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Announcer/gameOver.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Announcer/timeRunningOut.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/Announcer/sealpocalypse.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/Announcer/hell.wav" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/GamePlay/Mace.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/GamePlay/Spear.tscn" type="PackedScene" id=15]
+
+[node name="GamePlay" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Ground" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02056, 0 )
+material/0 = null
+
+[node name="StartGameCountDownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="GamePlayTimer" type="Timer" parent="."]
+
+[node name="GameResults" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -1.26695, 10.4344, -22.7247 )
+visible = false
+
+[node name="Camp" parent="." instance=ExtResource( 2 )]
+
+[node name="SealHolder" type="Spatial" parent="."]
+
+[node name="Seal3" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.911173, 0.000169938, 0.412023, -0.000169594, 1, -3.73964e-05, -0.412023, -3.58052e-05, 0.911173, -3.53488, 0.0101646, -8.77919 )
+
+[node name="Seal4" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.657046, 0, -0.75385, 0, 1, 0, 0.75385, 0, 0.657046, -5.79538, 0.0101646, -8.77919 )
+
+[node name="Seal5" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.897261, -0.00766347, -0.441433, -0.00759052, 0.999969, -0.00193134, 0.441434, 0.0016178, -0.897292, -7.86227, 0.0101646, -8.77919 )
+
+[node name="Seal6" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.648817, 0.000254908, -0.760944, -0.00012452, 1, 0.000228816, 0.760944, -5.37021e-05, 0.648818, -7.86227, 0.0101646, -7.06692 )
+
+[node name="Seal7" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49777, 0.0101646, -7.06692 )
+
+[node name="Seal23" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.726874, 9.75936e-05, -0.68677, -0.000169594, 1, -3.73964e-05, 0.68677, 0.000143653, 0.726874, -7.41889, 0.0101646, -12.7574 )
+
+[node name="Seal24" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.448258, 0, -0.893904, 0, 1, 0, 0.893904, 0, -0.448258, -8.2764, 0.0101646, -14.8489 )
+
+[node name="Seal147" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.116653, 5.6922e-05, 0.993173, -0.000169594, 1, -3.73964e-05, -0.993173, -0.000164075, 0.116653, -8.40402, 0.0101646, -2.04325 )
+
+[node name="Seal148" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.984674, 0, 0.174404, 0, 1, 0, -0.174404, 0, 0.984674, -9.56932, 0.0101646, -0.106245 )
+
+[node name="Seal149" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.0842798, -0.00256426, -0.996439, -0.00759052, 0.999969, -0.00193134, 0.996413, 0.00740072, -0.0842967, -10.6348, 0.0101646, 1.66485 )
+
+[node name="Seal150" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.986511, 8.53886e-05, 0.163696, -0.00012452, 1, 0.000228816, -0.163696, -0.000246111, 0.986511, -9.16758, 0.0101646, 2.54753 )
+
+[node name="Seal151" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.515502, 0, 0.856888, 0, 1, 0, -0.856888, 0, 0.515502, -8.46418, 0.0101646, 1.3783 )
+
+[node name="Seal152" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.963191, 0.000173405, 0.268819, -0.000169594, 1, -3.73964e-05, -0.268819, -9.57333e-06, 0.963191, -13.8151, 0.0101646, -0.765831 )
+
+[node name="Seal153" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.534898, 0, -0.844917, 0, 1, 0, 0.844917, 0, 0.534898, -16.0494, 0.0101646, -1.10924 )
+
+[node name="Seal154" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.116653, 5.6922e-05, 0.993173, -0.000169594, 1, -3.73964e-05, -0.993173, -0.000164075, 0.116653, 12.4332, 0.0101646, -2.04325 )
+
+[node name="Seal155" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.984674, 0, 0.174404, 0, 1, 0, -0.174404, 0, 0.984674, 11.2679, 0.0101646, -0.106245 )
+
+[node name="Seal156" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.0842798, -0.00256426, -0.996439, -0.00759052, 0.999969, -0.00193134, 0.996413, 0.00740072, -0.0842967, 10.2024, 0.0101646, 1.66485 )
+
+[node name="Seal157" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.986511, 8.53886e-05, 0.163696, -0.00012452, 1, 0.000228816, -0.163696, -0.000246111, 0.986511, 11.6697, 0.0101646, 2.54753 )
+
+[node name="Seal158" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.515502, 0, 0.856888, 0, 1, 0, -0.856888, 0, 0.515502, 12.3731, 0.0101646, 1.3783 )
+
+[node name="Seal159" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.963191, 0.000173405, 0.268819, -0.000169594, 1, -3.73964e-05, -0.268819, -9.57333e-06, 0.963191, 7.02216, 0.0101646, -0.765831 )
+
+[node name="Seal160" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.534898, 0, -0.844917, 0, 1, 0, 0.844917, 0, 0.534898, 4.78789, 0.0101646, -1.10924 )
+
+[node name="Seal25" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.74881, -0.00440396, 0.66277, -0.00759052, 0.999969, -0.00193134, -0.662742, -0.00647697, -0.74882, -9.06046, 0.0101646, -16.7613 )
+
+[node name="Seal26" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.457944, 0.000146386, -0.888981, -0.00012452, 1, 0.000228816, 0.888981, 0.000215483, -0.457944, -10.6447, 0.0101646, -16.1118 )
+
+[node name="Seal27" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.379343, 0, -0.925256, 0, 1, 0, 0.925256, 0, 0.379343, -10.1271, 0.0101646, -14.8493 )
+
+[node name="Seal28" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.808257, 0.000159095, 0.58883, -0.000169594, 1, -3.73964e-05, -0.58883, -6.96391e-05, 0.808257, -13.8015, 0.0101646, -17.0305 )
+
+[node name="Seal29" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, 0.796709, -16.0147, 0.0101646, -16.5705 )
+
+[node name="Seal30" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.788651, -0.00717388, -0.614799, -0.00759052, 0.999969, -0.00193134, 0.614794, 0.0031435, -0.788681, -18.0383, 0.0101646, -16.1499 )
+
+[node name="Seal31" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.790096, 0.000238645, -0.612983, -0.00012452, 1, 0.000228816, 0.612983, -0.000104453, 0.790096, -17.6899, 0.0101646, -14.4734 )
+
+[node name="Seal32" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, -16.3539, 0.0101646, -14.7511 )
+
+[node name="Seal38" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, -3.73219, 0.0101646, -6.96396 )
+
+[node name="Seal33" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.772487, 0.00342649, 0.635021, 0.00373947, 0.999993, -0.000846883, -0.635019, 0.00172045, -0.772495, -17.6873, 0.0198635, -10.2175 )
+
+[node name="Seal34" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.385563, 0.00353376, 0.922675, 0.000350949, 0.999992, -0.00397654, -0.922681, 0.00185703, 0.385558, -16.6877, 0.0125659, -8.19009 )
+
+[node name="Seal35" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.792686, 0.00837363, -0.609572, -0.0115237, 0.999933, -0.00124937, 0.60952, 0.00801488, 0.79273, -15.7736, 0.00589335, -6.3363 )
+
+[node name="Seal36" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.395564, 0.00337286, 0.918432, 0.000183207, 0.999993, -0.0037513, -0.918438, 0.00165216, 0.39556, -14.2379, 0.00187258, -7.09352 )
+
+[node name="Seal37" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.442226, 0.00353376, 0.896897, 0.0032283, 0.999992, -0.00234821, -0.896898, 0.00185703, -0.442234, -14.8413, 0.00627762, -8.31734 )
+
+[node name="Seal8" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.1214, 0.0101646, -12.0649 )
+
+[node name="Seal9" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.3819, 0.0101646, -12.0649 )
+
+[node name="Seal10" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.374607, 0, -0.927184, 0, 1, 0, 0.927184, 0, -0.374607, -14.4487, 0.0101646, -12.0649 )
+
+[node name="Seal11" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.544639, 0, 0.838671, 0, 1, 0, -0.838671, 0, 0.544639, -14.4487, 0.0101646, -10.3526 )
+
+[node name="Seal12" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.992546, 0, -0.121869, 0, 1, 0, 0.121869, 0, -0.992546, -11.383, 0.0505308, -9.33421 )
+
+[node name="Seal13" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.158434, 1.00516e-05, 0.98737, -0.000169594, 1, -3.73964e-05, -0.98737, -0.000173377, -0.158434, -4.46279, 0.0101646, -16.8303 )
+
+[node name="Seal14" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.89987, 0, 0.436158, 0, 1, 0, -0.436158, 0, 0.89987, -5.05608, 0.0101646, -14.6491 )
+
+[node name="Seal15" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.190465, -0.000450261, -0.981694, -0.00759052, 0.999969, -0.00193134, 0.981665, 0.00781942, 0.190456, -5.59855, 0.0101646, -12.6546 )
+
+[node name="Seal16" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.904556, 1.50833e-05, 0.426356, -0.00012452, 1, 0.000228816, -0.426356, -0.000260066, 0.904555, -3.98982, -0.0121921, -10.1662 )
+
+[node name="Seal17" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.262459, 0, 0.964943, 0, 1, 0, -0.964943, 0, 0.262459, -3.58819, 0.0101646, -13.5219 )
+
+[node name="Seal18" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.964943, 0, 0.262459, 0, 1, 0, -0.262459, 0, -0.964943, -9.36199, 0.0101646, -11.3371 )
+
+[node name="Seal19" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.964943, 0, -0.262459, 0, 1, 0, 0.262459, 0, 0.964943, -9.95528, 0.0101646, -9.15585 )
+
+[node name="Seal20" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796361, 0, -0.604822, 0, 1, 0, 0.604822, 0, 0.796361, -10.4978, 0.0101646, -7.16142 )
+
+[node name="Seal21" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.666324, 0, 0.745662, 0, 1, 0, -0.745662, 0, -0.666324, -8.84552, 0.0101646, -6.71202 )
+
+[node name="Seal22" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.142905, 0, -0.989736, 0, 1, 0, 0.989736, 0, -0.142905, -7.05816, 0.0505308, -9.403 )
+
+[node name="Seal39" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.911173, 0.000169938, 0.412023, -0.000169594, 1, -3.73964e-05, -0.412023, -3.58052e-05, 0.911173, 14.5179, 0.0101646, -8.77919 )
+
+[node name="Seal40" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.657046, 0, -0.75385, 0, 1, 0, 0.75385, 0, 0.657046, 12.2574, 0.0101646, -8.77919 )
+
+[node name="Seal41" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.897261, -0.00766347, -0.441433, -0.00759052, 0.999969, -0.00193134, 0.441434, 0.0016178, -0.897292, 10.1905, 0.0101646, -8.77919 )
+
+[node name="Seal42" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.648817, 0.000254908, -0.760944, -0.00012452, 1, 0.000228816, 0.760944, -5.37021e-05, 0.648818, 10.1905, 0.0101646, -7.06692 )
+
+[node name="Seal43" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.555, 0.0101646, -7.06692 )
+
+[node name="Seal44" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.726874, 9.75936e-05, -0.68677, -0.000169594, 1, -3.73964e-05, 0.68677, 0.000143653, 0.726874, 10.6339, 0.0101646, -12.7574 )
+
+[node name="Seal45" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.448258, 0, -0.893904, 0, 1, 0, 0.893904, 0, -0.448258, 9.77635, 0.0101646, -14.8489 )
+
+[node name="Seal46" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.74881, -0.00440396, 0.66277, -0.00759052, 0.999969, -0.00193134, -0.662742, -0.00647697, -0.74882, 8.99228, 0.0101646, -16.7613 )
+
+[node name="Seal47" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.457944, 0.000146386, -0.888981, -0.00012452, 1, 0.000228816, 0.888981, 0.000215483, -0.457944, 7.408, 0.0101646, -16.1118 )
+
+[node name="Seal48" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.379343, 0, -0.925256, 0, 1, 0, 0.925256, 0, 0.379343, 7.92561, 0.0101646, -14.8493 )
+
+[node name="Seal49" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.808257, 0.000159095, 0.58883, -0.000169594, 1, -3.73964e-05, -0.58883, -6.96391e-05, 0.808257, 4.25128, 0.0101646, -17.0305 )
+
+[node name="Seal50" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, 0.796709, 2.03808, 0.0101646, -16.5705 )
+
+[node name="Seal51" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.788651, -0.00717388, -0.614799, -0.00759052, 0.999969, -0.00193134, 0.614794, 0.0031435, -0.788681, 0.0144367, 0.0101646, -16.1499 )
+
+[node name="Seal52" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.790096, 0.000238645, -0.612983, -0.00012452, 1, 0.000228816, 0.612983, -0.000104453, 0.790096, 0.36289, 0.0101646, -14.4734 )
+
+[node name="Seal53" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, 1.69884, 0.0101646, -14.7511 )
+
+[node name="Seal54" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, 14.3205, 0.0101646, -6.96396 )
+
+[node name="Seal55" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.772487, 0.00342649, 0.635021, 0.00373947, 0.999993, -0.000846883, -0.635019, 0.00172045, -0.772495, 0.36541, 0.0198635, -10.2175 )
+
+[node name="Seal56" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.385563, 0.00353376, 0.922675, 0.000350949, 0.999992, -0.00397654, -0.922681, 0.00185703, 0.385558, 1.36506, 0.0125659, -8.19009 )
+
+[node name="Seal57" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.792686, 0.00837363, -0.609572, -0.0115237, 0.999933, -0.00124937, 0.60952, 0.00801488, 0.79273, 2.2791, 0.00589335, -6.3363 )
+
+[node name="Seal58" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.395564, 0.00337286, 0.918432, 0.000183207, 0.999993, -0.0037513, -0.918438, 0.00165216, 0.39556, 3.81483, 0.00187258, -7.09352 )
+
+[node name="Seal59" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.442226, 0.00353376, 0.896897, 0.0032283, 0.999992, -0.00234821, -0.896898, 0.00185703, -0.442234, 3.21141, 0.00627762, -8.31734 )
+
+[node name="Seal60" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.93139, 0.0101646, -12.0649 )
+
+[node name="Seal61" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.67089, 0.0101646, -12.0649 )
+
+[node name="Seal62" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.374607, 0, -0.927184, 0, 1, 0, 0.927184, 0, -0.374607, 3.604, 0.0101646, -12.0649 )
+
+[node name="Seal63" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.544639, 0, 0.838671, 0, 1, 0, -0.838671, 0, 0.544639, 3.604, 0.0101646, -10.3526 )
+
+[node name="Seal64" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.992546, 0, -0.121869, 0, 1, 0, 0.121869, 0, -0.992546, 6.66975, 0.0505308, -9.33421 )
+
+[node name="Seal65" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.158434, 1.00516e-05, 0.98737, -0.000169594, 1, -3.73964e-05, -0.98737, -0.000173377, -0.158434, 13.59, 0.0101646, -16.8303 )
+
+[node name="Seal66" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.89987, 0, 0.436158, 0, 1, 0, -0.436158, 0, 0.89987, 12.9967, 0.0101646, -14.6491 )
+
+[node name="Seal67" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.190465, -0.000450261, -0.981694, -0.00759052, 0.999969, -0.00193134, 0.981665, 0.00781942, 0.190456, 12.4542, 0.0101646, -12.6546 )
+
+[node name="Seal68" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.904556, 1.50833e-05, 0.426356, -0.00012452, 1, 0.000228816, -0.426356, -0.000260066, 0.904555, 14.0629, -0.0121921, -10.1662 )
+
+[node name="Seal69" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.262459, 0, 0.964943, 0, 1, 0, -0.964943, 0, 0.262459, 14.4646, 0.0101646, -13.5219 )
+
+[node name="Seal70" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.964943, 0, 0.262459, 0, 1, 0, -0.262459, 0, -0.964943, 8.69075, 0.0101646, -11.3371 )
+
+[node name="Seal71" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.964943, 0, -0.262459, 0, 1, 0, 0.262459, 0, 0.964943, 8.09746, 0.0101646, -9.15585 )
+
+[node name="Seal72" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796361, 0, -0.604822, 0, 1, 0, 0.604822, 0, 0.796361, 7.55499, 0.0101646, -7.16142 )
+
+[node name="Seal73" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.666324, 0, 0.745662, 0, 1, 0, -0.745662, 0, -0.666324, 9.20723, 0.0101646, -6.71202 )
+
+[node name="Seal74" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.142905, 0, -0.989736, 0, 1, 0, 0.989736, 0, -0.142905, 10.9946, 0.0505308, -9.403 )
+
+[node name="Seal75" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.911173, 0.000169938, 0.412023, -0.000169594, 1, -3.73964e-05, -0.412023, -3.58052e-05, 0.911173, -1.60465, 0.0101646, 14.1239 )
+
+[node name="Seal76" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.657046, 0, -0.75385, 0, 1, 0, 0.75385, 0, 0.657046, -3.86515, 0.0101646, 14.1239 )
+
+[node name="Seal77" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.897261, -0.00766347, -0.441433, -0.00759052, 0.999969, -0.00193134, 0.441434, 0.0016178, -0.897292, -5.93204, 0.0101646, 14.1239 )
+
+[node name="Seal78" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.648817, 0.000254908, -0.760944, -0.00012452, 1, 0.000228816, 0.760944, -5.37021e-05, 0.648818, -5.93204, 0.0101646, 15.8361 )
+
+[node name="Seal79" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56754, 0.0101646, 15.8361 )
+
+[node name="Seal80" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.726874, 9.75936e-05, -0.68677, -0.000169594, 1, -3.73964e-05, 0.68677, 0.000143653, 0.726874, -5.48866, 0.0101646, 10.1457 )
+
+[node name="Seal81" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.448258, 0, -0.893904, 0, 1, 0, 0.893904, 0, -0.448258, -6.34617, 0.0101646, 8.05416 )
+
+[node name="Seal82" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.74881, -0.00440396, 0.66277, -0.00759052, 0.999969, -0.00193134, -0.662742, -0.00647697, -0.74882, -7.13023, 0.0101646, 6.14176 )
+
+[node name="Seal83" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.457944, 0.000146386, -0.888981, -0.00012452, 1, 0.000228816, 0.888981, 0.000215483, -0.457944, -8.71451, 0.0101646, 6.7913 )
+
+[node name="Seal84" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.379343, 0, -0.925256, 0, 1, 0, 0.925256, 0, 0.379343, -8.1969, 0.0101646, 8.05381 )
+
+[node name="Seal85" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.808257, 0.000159095, 0.58883, -0.000169594, 1, -3.73964e-05, -0.58883, -6.96391e-05, 0.808257, -11.8712, 0.0101646, 5.87255 )
+
+[node name="Seal86" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, 0.796709, -14.0844, 0.0101646, 6.33257 )
+
+[node name="Seal87" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.788651, -0.00717388, -0.614799, -0.00759052, 0.999969, -0.00193134, 0.614794, 0.0031435, -0.788681, -16.1081, 0.0101646, 6.7532 )
+
+[node name="Seal88" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.790096, 0.000238645, -0.612983, -0.00012452, 1, 0.000228816, 0.612983, -0.000104453, 0.790096, -15.7596, 0.0101646, 8.42964 )
+
+[node name="Seal89" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, -14.4237, 0.0101646, 8.15195 )
+
+[node name="Seal90" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, -1.80196, 0.0101646, 15.9391 )
+
+[node name="Seal91" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.772487, 0.00342649, 0.635021, 0.00373947, 0.999993, -0.000846883, -0.635019, 0.00172045, -0.772495, -15.7571, 0.0198635, 12.6855 )
+
+[node name="Seal92" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.385563, 0.00353376, 0.922675, 0.000350949, 0.999992, -0.00397654, -0.922681, 0.00185703, 0.385558, -14.7574, 0.0125659, 14.713 )
+
+[node name="Seal93" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.792686, 0.00837363, -0.609572, -0.0115237, 0.999933, -0.00124937, 0.60952, 0.00801488, 0.79273, -13.8434, 0.00589335, 16.5668 )
+
+[node name="Seal94" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.395564, 0.00337286, 0.918432, 0.000183207, 0.999993, -0.0037513, -0.918438, 0.00165216, 0.39556, -12.3077, 0.00187258, 15.8095 )
+
+[node name="Seal95" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.442226, 0.00353376, 0.896897, 0.0032283, 0.999992, -0.00234821, -0.896898, 0.00185703, -0.442234, -12.9111, 0.00627762, 14.5857 )
+
+[node name="Seal96" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.19112, 0.0101646, 10.8382 )
+
+[node name="Seal97" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.4516, 0.0101646, 10.8382 )
+
+[node name="Seal98" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.374607, 0, -0.927184, 0, 1, 0, 0.927184, 0, -0.374607, -12.5185, 0.0101646, 10.8382 )
+
+[node name="Seal99" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.544639, 0, 0.838671, 0, 1, 0, -0.838671, 0, 0.544639, -12.5185, 0.0101646, 12.5504 )
+
+[node name="Seal100" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.992546, 0, -0.121869, 0, 1, 0, 0.121869, 0, -0.992546, -9.45276, 0.0505308, 13.5689 )
+
+[node name="Seal101" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.158434, 1.00516e-05, 0.98737, -0.000169594, 1, -3.73964e-05, -0.98737, -0.000173377, -0.158434, -2.53256, 0.0101646, 6.07275 )
+
+[node name="Seal102" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.89987, 0, 0.436158, 0, 1, 0, -0.436158, 0, 0.89987, -3.12585, 0.0101646, 8.25401 )
+
+[node name="Seal103" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.190465, -0.000450261, -0.981694, -0.00759052, 0.999969, -0.00193134, 0.981665, 0.00781942, 0.190456, -3.66832, 0.0101646, 10.2484 )
+
+[node name="Seal104" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.904556, 1.50833e-05, 0.426356, -0.00012452, 1, 0.000228816, -0.426356, -0.000260066, 0.904555, -2.05959, -0.0121921, 12.7369 )
+
+[node name="Seal105" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.262459, 0, 0.964943, 0, 1, 0, -0.964943, 0, 0.262459, -1.65796, 0.0101646, 9.38117 )
+
+[node name="Seal106" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.964943, 0, 0.262459, 0, 1, 0, -0.262459, 0, -0.964943, -7.43176, 0.0101646, 11.566 )
+
+[node name="Seal107" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.964943, 0, -0.262459, 0, 1, 0, 0.262459, 0, 0.964943, -8.02505, 0.0101646, 13.7472 )
+
+[node name="Seal108" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796361, 0, -0.604822, 0, 1, 0, 0.604822, 0, 0.796361, -8.56752, 0.0101646, 15.7417 )
+
+[node name="Seal109" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.666324, 0, 0.745662, 0, 1, 0, -0.745662, 0, -0.666324, -6.91528, 0.0101646, 16.191 )
+
+[node name="Seal110" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.142905, 0, -0.989736, 0, 1, 0, 0.989736, 0, -0.142905, -5.12793, 0.0505308, 13.5001 )
+
+[node name="Seal111" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.911173, 0.000169938, 0.412023, -0.000169594, 1, -3.73964e-05, -0.412023, -3.58052e-05, 0.911173, 16.4481, 0.0101646, 14.1239 )
+
+[node name="Seal112" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.657046, 0, -0.75385, 0, 1, 0, 0.75385, 0, 0.657046, 14.1876, 0.0101646, 14.1239 )
+
+[node name="Seal113" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.897261, -0.00766347, -0.441433, -0.00759052, 0.999969, -0.00193134, 0.441434, 0.0016178, -0.897292, 12.1207, 0.0101646, 14.1239 )
+
+[node name="Seal114" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.648817, 0.000254908, -0.760944, -0.00012452, 1, 0.000228816, 0.760944, -5.37021e-05, 0.648818, 12.1207, 0.0101646, 15.8361 )
+
+[node name="Seal115" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4852, 0.0101646, 15.8361 )
+
+[node name="Seal116" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.726874, 9.75936e-05, -0.68677, -0.000169594, 1, -3.73964e-05, 0.68677, 0.000143653, 0.726874, 12.5641, 0.0101646, 10.1457 )
+
+[node name="Seal117" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.448258, 0, -0.893904, 0, 1, 0, 0.893904, 0, -0.448258, 11.7066, 0.0101646, 8.05416 )
+
+[node name="Seal118" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.74881, -0.00440396, 0.66277, -0.00759052, 0.999969, -0.00193134, -0.662742, -0.00647697, -0.74882, 10.9225, 0.0101646, 6.14176 )
+
+[node name="Seal119" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.457944, 0.000146386, -0.888981, -0.00012452, 1, 0.000228816, 0.888981, 0.000215483, -0.457944, 9.33823, 0.0101646, 6.7913 )
+
+[node name="Seal120" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.379343, 0, -0.925256, 0, 1, 0, 0.925256, 0, 0.379343, 9.85584, 0.0101646, 8.05381 )
+
+[node name="Seal121" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.808257, 0.000159095, 0.58883, -0.000169594, 1, -3.73964e-05, -0.58883, -6.96391e-05, 0.808257, 6.18151, 0.0101646, 5.87255 )
+
+[node name="Seal122" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, 0.796709, 3.96831, 0.0101646, 6.33257 )
+
+[node name="Seal123" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.788651, -0.00717388, -0.614799, -0.00759052, 0.999969, -0.00193134, 0.614794, 0.0031435, -0.788681, 1.94467, 0.0101646, 6.7532 )
+
+[node name="Seal124" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.790096, 0.000238645, -0.612983, -0.00012452, 1, 0.000228816, 0.612983, -0.000104453, 0.790096, 2.29312, 0.0101646, 8.42964 )
+
+[node name="Seal125" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, 3.62907, 0.0101646, 8.15195 )
+
+[node name="Seal126" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.979074, 0, 0.203505, 0, 1, 0, -0.203505, 0, 0.979074, 16.2508, 0.0101646, 15.9391 )
+
+[node name="Seal127" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.772487, 0.00342649, 0.635021, 0.00373947, 0.999993, -0.000846883, -0.635019, 0.00172045, -0.772495, 2.29564, 0.0198635, 12.6855 )
+
+[node name="Seal128" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.385563, 0.00353376, 0.922675, 0.000350949, 0.999992, -0.00397654, -0.922681, 0.00185703, 0.385558, 3.29529, 0.0125659, 14.713 )
+
+[node name="Seal129" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.792686, 0.00837363, -0.609572, -0.0115237, 0.999933, -0.00124937, 0.60952, 0.00801488, 0.79273, 4.20933, 0.00589335, 16.5668 )
+
+[node name="Seal130" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.395564, 0.00337286, 0.918432, 0.000183207, 0.999993, -0.0037513, -0.918438, 0.00165216, 0.39556, 5.74506, 0.00187258, 15.8095 )
+
+[node name="Seal131" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.442226, 0.00353376, 0.896897, 0.0032283, 0.999992, -0.00234821, -0.896898, 0.00185703, -0.442234, 5.14164, 0.00627762, 14.5857 )
+
+[node name="Seal132" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.86162, 0.0101646, 10.8382 )
+
+[node name="Seal133" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.60112, 0.0101646, 10.8382 )
+
+[node name="Seal134" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.374607, 0, -0.927184, 0, 1, 0, 0.927184, 0, -0.374607, 5.53423, 0.0101646, 10.8382 )
+
+[node name="Seal135" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.544639, 0, 0.838671, 0, 1, 0, -0.838671, 0, 0.544639, 5.53423, 0.0101646, 12.5504 )
+
+[node name="Seal136" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.992546, 0, -0.121869, 0, 1, 0, 0.121869, 0, -0.992546, 8.59998, 0.0505308, 13.5689 )
+
+[node name="Seal137" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.158434, 1.00516e-05, 0.98737, -0.000169594, 1, -3.73964e-05, -0.98737, -0.000173377, -0.158434, 15.5202, 0.0101646, 6.07275 )
+
+[node name="Seal138" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.89987, 0, 0.436158, 0, 1, 0, -0.436158, 0, 0.89987, 14.9269, 0.0101646, 8.25401 )
+
+[node name="Seal139" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.190465, -0.000450261, -0.981694, -0.00759052, 0.999969, -0.00193134, 0.981665, 0.00781942, 0.190456, 14.3844, 0.0101646, 10.2484 )
+
+[node name="Seal140" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.904556, 1.50833e-05, 0.426356, -0.00012452, 1, 0.000228816, -0.426356, -0.000260066, 0.904555, 15.9931, -0.0121921, 12.7369 )
+
+[node name="Seal141" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.262459, 0, 0.964943, 0, 1, 0, -0.964943, 0, 0.262459, 16.3948, 0.0101646, 9.38117 )
+
+[node name="Seal142" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.964943, 0, 0.262459, 0, 1, 0, -0.262459, 0, -0.964943, 10.621, 0.0101646, 11.566 )
+
+[node name="Seal143" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.964943, 0, -0.262459, 0, 1, 0, 0.262459, 0, 0.964943, 10.0277, 0.0101646, 13.7472 )
+
+[node name="Seal144" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 0.796361, 0, -0.604822, 0, 1, 0, 0.604822, 0, 0.796361, 9.48522, 0.0101646, 15.7417 )
+
+[node name="Seal145" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.666324, 0, 0.745662, 0, 1, 0, -0.745662, 0, -0.666324, 11.1375, 0.0101646, 16.191 )
+
+[node name="Seal146" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( -0.142905, 0, -0.989736, 0, 1, 0, 0.989736, 0, -0.142905, 12.9248, 0.0505308, 13.5001 )
+
+[node name="Seal" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85766, 0.0213346, 1.56462 )
+
+[node name="Seal2" parent="SealHolder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077908, 0.0101646, 1.66366 )
+
+[node name="Announce10Kills" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Announce20Kills" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Announce30Kills" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="AnnounceGameStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="AnnounceTimesUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="AnnounceCloseToTimesUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Mace" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.468523, 0.189121, 2.12289 )
+
+[node name="Axe" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.620918, 3.24156 )
+
+[node name="Spear" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11921, 2.61292 )
+
+[connection signal="timeout" from="StartGameCountDownTimer" to="." method="_on_StartGameCountDownTimer_timeout"]
+[connection signal="timeout" from="GamePlayTimer" to="." method="_on_GamePlayTimer_timeout"]
